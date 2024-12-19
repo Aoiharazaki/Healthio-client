@@ -2,12 +2,12 @@
 
 // import Image from "next/image";
 // import Todo from "./components/Todo";
-import Shop from "./components/Shop";
-import { ShopType } from "./types";
+import Shop from "../components/Shop";
+import { ShopType } from "../types";
 // import { useRef } from "react";
 // import { useTodos } from "./hooks/useTodos";
 // import { API_URL } from "@/constants/url";
-import { useShops } from "./hooks/useShops";
+import { useShops } from "../hooks/useShops";
 
 export default function Home() {
   // const inputRef = useRef<HTMLInputElement | null >(null);
@@ -35,10 +35,13 @@ export default function Home() {
   return (
   <div>
     <div className="max-w-xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-32 p-4">
-      {/* <div className="px-4 py-2">
-        <h1 className="text-gray-800 font-bold text-2xl uppercase">Shop List</h1>
-      </div> */}
-      {/* <form className="w-full max-w-sm mx-auto px-4 py-2" onSubmit={handleSubmit}>
+      <div className="px-4 py-2">
+        <h1 className="text-gray-800 font-bold text-2xl uppercase">ヘルシオ 〜Healthio〜</h1>
+      </div>
+      {/* <form
+        className="w-full max-w-sm mx-auto px-4 py-2"
+        // onSubmit={handleSubmit}
+      >
         <div className="flex items-center border-b-2 border-teal-500 py-2">
           <input
             className="appearance-none bg-transparent
@@ -46,7 +49,7 @@ export default function Home() {
           focus:outline-none"
             type="text"
             placeholder="Add a task"
-            ref={inputRef}
+            // ref={inputRef}
           />
           <button
             className="duration-150 flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
