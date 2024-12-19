@@ -1,5 +1,5 @@
 import React, {  } from 'react'
-import { ShopType } from '../types';
+import { ShopType } from '../../types/types';
 import Image from 'next/image';
 
 type ShopProps = {

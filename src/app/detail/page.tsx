@@ -2,12 +2,13 @@
 
 // import Image from "next/image";
 // import Todo from "./components/Todo";
-import Shop from "../components/Shop";
-import { ShopType } from "../types";
+import Shop from "@/src/features/shoplist/Shop";
+// import Shop from "../components/Shop";
+import { ShopType } from "../../types/types";
 // import { useRef } from "react";
 // import { useTodos } from "./hooks/useTodos";
 // import { API_URL } from "@/constants/url";
-import { useShops } from "../hooks/useShops";
+import { useShops } from "../../hooks/useShops";
 
 export default function Home() {
   // const inputRef = useRef<HTMLInputElement | null >(null);

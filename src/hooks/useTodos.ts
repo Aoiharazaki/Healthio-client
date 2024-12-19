@@ -1,4 +1,4 @@
-import { API_URL } from "@/constants/url";
+import { API_URL } from "@/src/constants/url";
 import useSWR from "swr";
 
 async function fetcher(key: string) {
