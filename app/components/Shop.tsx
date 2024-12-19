@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import React, {  } from 'react'
 import { ShopType } from '../types';
-import { useShops } from '../hooks/useShops';
-import { API_URL } from '@/constants/url';
 import Image from 'next/image';
 
 type ShopProps = {
