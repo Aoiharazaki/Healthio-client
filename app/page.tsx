@@ -1,35 +1,35 @@
 "use client";
 
 // import Image from "next/image";
-import Todo from "./components/Todo";
+// import Todo from "./components/Todo";
 import Shop from "./components/Shop";
-import { ShopType, TodoType } from "./types";
-import { useRef } from "react";
-import { useTodos } from "./hooks/useTodos";
-import { API_URL } from "@/constants/url";
+import { ShopType } from "./types";
+// import { useRef } from "react";
+// import { useTodos } from "./hooks/useTodos";
+// import { API_URL } from "@/constants/url";
 import { useShops } from "./hooks/useShops";
 
 export default function Home() {
-  const inputRef = useRef<HTMLInputElement | null >(null);
-  const {todos,mutate} = useTodos();
+  // const inputRef = useRef<HTMLInputElement | null >(null);
+  // const {todos,mutate} = useTodos();
   const {shops} = useShops();
 
-  const handleSubmit = async (e: React.FormEvent ) => { 
-    e.preventDefault();
-    const response = await fetch(`${API_URL}/createTodo`,{
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: inputRef.current?.value,
-        isCompleted: false,
-      }),
-    });
-    if (response.ok) {
-      const newTodo = await response.json();
-      mutate([...todos, newTodo]);
-      inputRef.current!.value = "";
-    }
-  };
+  // const handleSubmit = async (e: React.FormEvent ) => { 
+  //   e.preventDefault();
+  //   const response = await fetch(`${API_URL}/createTodo`,{
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       title: inputRef.current?.value,
+  //       isCompleted: false,
+  //     }),
+  //   });
+  //   if (response.ok) {
+  //     const newTodo = await response.json();
+  //     mutate([...todos, newTodo]);
+  //     inputRef.current!.value = "";
+  //   }
+  // };
 
 
   return (
