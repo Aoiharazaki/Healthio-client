@@ -15,6 +15,7 @@ export type ShopType = {
     photos: Photo[]; 
     createdAt: Date;
     updatedAt: Date;
+    link?: string;
 };
 
 export type Photo = {
