@@ -8,9 +8,9 @@ export type ShopType = {
     id: number;
     name: string;
     description?: string | null; 
-    location?: string | null; 
+    location?: { name: string } | null;
     locationId?: number | null;
-    genre?: string | null; 
+    genre?: { name: string } | null;
     genreId?: number | null;
     photos: Photo[]; 
     createdAt: Date;
