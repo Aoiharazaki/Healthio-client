@@ -1,6 +1,7 @@
 import React, {  } from 'react'
 import { ShopType } from '../../types/types';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type ShopProps = {
   shop: ShopType;
@@ -23,9 +24,9 @@ const Shop = ({ shop }: ShopProps) => {
           </div>
           <div className="flex-1">
             <h2 className="text-xl font-semibold truncate">
-              <a href={shop.link || "#"} className="text-orange-500">
+              <Link href={`/detail/${shop.id}`} className="text-orange-500">
                 {shop.name}
-              </a>
+              </Link>
             </h2>
             <p className="text-sm text-gray-600">{shop.location?.name || "N/A"} / {shop.genre?.name || "N/A"}</p>
             <p className="text-gray-800 text-base line-clamp-3">

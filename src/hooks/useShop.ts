@@ -5,11 +5,11 @@ async function fetcher(key: string) {
     return fetch(key).then((res) => res.json());
 }
 
-export const useShops = ()=> {
-    const { data, error, isLoading, mutate } = useSWR(`${API_URL}/allShops`,fetcher);
-    
+export const useShop = (id: string) => {
+    const { data, error, isLoading, mutate } = useSWR(`${API_URL}/shop/${id}`, fetcher);
+
     return {
-        shops: data,
+        shop: data,
         isLoading,
         error,
         mutate,
