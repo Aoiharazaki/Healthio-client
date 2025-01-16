@@ -1,14 +1,23 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useShop } from '../../../hooks/useShop';
 
-export default function DetailPage({ params }: { params: { id: string } }) {
-    // paramsを非同期に解決
-    const { id } = React.use(params);
+export default function DetailPage({ params }: { params: Promise<{ id: string }> }) {
+    const [id, setId] = useState<string | null>(null);
 
-    const { shop, isLoading, error } = useShop(id);
+    useEffect(() => {
+        async function fetchParams() {
+            const resolvedParams = await params;
+            setId(resolvedParams.id);
+        }
+        fetchParams();
+    }, [params]);
 
+    // 常にフックを呼び出す
+    const { shop, isLoading, error } = useShop(id || '');
+
+    if (!id) return <p>Loading...</p>;
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
     if (!shop) return <p>お店が見つかりません</p>;
